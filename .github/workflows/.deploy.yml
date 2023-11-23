@@ -26,9 +26,9 @@ jobs:
           install.packages(c("rmarkdown", "pagedown", "googlesheets4", "purrr", "dplyr", "readr", "tidyr", "lubridate"))
         shell: Rscript {0}
           
-      - name: Create docs
-        run: |
-          mkdir docs
+      #- name: Create docs
+      #  run: |
+      #    mkdir docs
 
       - name: Render cv
         run: |
@@ -40,5 +40,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs # The folder the action should deploy.
+          #FOLDER: docs # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
