@@ -12,23 +12,25 @@ jobs:
   deploy-cv:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
       
       - name: Install curl
         run: |
           sudo apt-get install libcurl4-openssl-dev
       
-      - uses: r-lib/actions/setup-r@v2
-      - uses: r-lib/actions/setup-pandoc@v1
+      - name: and pandoc setup
+        uses: r-lib/actions/setup-r@v2
+        uses: r-lib/actions/setup-pandoc@v1
       
-      - name: Install dependencies
+      - name: Install R dependencies
         run: |
           install.packages(c("rmarkdown", "pagedown", "googlesheets4", "purrr", "dplyr", "readr", "tidyr", "lubridate"))
         shell: Rscript {0}
           
-      #- name: Create docs
-      #  run: |
-      #    mkdir docs
+      - name: Create docs
+        run: |
+          mkdir docs
 
       - name: Render cv
         run: |
@@ -40,5 +42,5 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: . # The folder the action should deploy.
+          FOLDER: docs # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
