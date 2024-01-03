@@ -52,11 +52,23 @@ Aside
 
 
 ```{r}
+
+# I did not get the deployment with Github Actions and workflows to work
+# For now, I am hard coding a link to the github remote on the pdf
+
+# if(params$pdf_mode){
+#  cat("View this CV online with links at _AMCalejandro.github.io/cv/_")
+# } else {
+#  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/AMCalejandro/cv/raw/gh-pages/amc_cv.pdf)")
+# }
+
+
 if(params$pdf_mode){
- cat("View this CV online with links at _AMCalejandro.github.io/cv/_")
+ cat("View this CV online with links at https://github.com/AMCalejandro/cv/")
 } else {
- cat("[<i class='fas fa-download'></i> Download a PDF of this #CV](https://github.com/AMCalejandro/cv/raw/gh-pages/amc_cv.pdf)")
+ cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/AMCalejandro/cv/raw/gh-pages/amc_cv.pdf)")
 }
+
 ```
 
 Contact {#contact}
@@ -126,6 +138,7 @@ CV %<>% print_section('education')
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
+
 
 <!-- ::: aside -->
 <!-- ```{r} -->
