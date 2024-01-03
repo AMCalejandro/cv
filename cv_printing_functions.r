@@ -135,6 +135,10 @@ sanitize_links <- function(cv, text){
 #' @description Take a position data frame and the section id desired and prints the section to markdown.
 #' @param section_id ID of the entries section to be printed as encoded by the `section` column of the `entries` table
 print_section <- function(cv, section_id, glue_template = "default"){
+  
+  # Exclude data set FALSE
+  cv$entries_data <- cv$entries_data %>% dplyr::filter(in_resume == TRUE)
+  
 
   if(glue_template == "default"){
     glue_template <- "
