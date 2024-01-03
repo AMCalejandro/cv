@@ -4,7 +4,7 @@ author: Alejandro Martinez-Carrasco
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
-    value: false
+    value: true
 output:
   pagedown::html_resume:
     css: ['style/dd_cv.css', 'resume']
@@ -25,7 +25,6 @@ CV <- create_CV_object(
   data_location = "https://docs.google.com/spreadsheets/d/1DAV6qURXI3cF77zc3cpIjKftcgwQa8NwWCxTZ28U__E/edit?usp=sharing",  
   pdf_mode = params$pdf_mode
 )
-
 ```
 
 
@@ -54,9 +53,9 @@ Aside
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links at _/home/amcalejandro/Data/POSTDOCS/mycv/_")
+ cat("View this CV online with links at _AMCalejandro.github.io/cv/_")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/AMCalejandro/cv/raw/gh-pages/amc_cv.pdf)")
+ cat("[<i class='fas fa-download'></i> Download a PDF of this #CV](https://github.com/AMCalejandro/cv/raw/gh-pages/dz_cv.pdf)")
 }
 ```
 
@@ -88,18 +87,17 @@ CV %>% print_skills("technology")
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).  
 
-The source code is available [GitHub](https://github.com/AMCalejandro/cv).
+The source code is available [GitHub](https://github.com/AMCalejandro/cv).  
 
 Last updated on `r Sys.Date()`.
-
 
 
 Main
 ================================================================================
 
-Alejandro Martinez Carrasco {#title}
+Alejandro Martinez-Carrasco {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -129,11 +127,11 @@ CV %<>% print_section('education')
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
-::: aside
-```{r}
-CV %<>% print_text_block('teaching_experience_aside')
-```
-:::
+<!-- ::: aside -->
+<!-- ```{r} -->
+<!-- CV %<>% print_text_block('teaching_experience_aside') -->
+<!-- ``` -->
+<!-- ::: -->
 
 
 ```{r}
@@ -142,16 +140,18 @@ CV %<>% print_section('teaching_positions')
 
 
 
-```{r}
-CV %<>% print_links()
-```
-
-
 Selected Publications {data-icon=book}
 --------------------------------------------------------------------------------
 
 
 ```{r}
 CV %<>% print_section('academic_articles')
+```
+
+
+
+
+```{r}
+CV %<>% print_links()
 ```
 
