@@ -53,18 +53,8 @@ Aside
 
 ```{r}
 
-# I did not get the deployment with Github Actions and workflows to work
-# For now, I am hard coding a link to the github remote on the pdf
-
-# if(params$pdf_mode){
-#  cat("View this CV online with links at _AMCalejandro.github.io/cv/_")
-# } else {
-#  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/AMCalejandro/cv/raw/gh-pages/amc_cv.pdf)")
-# }
-
-
 if(params$pdf_mode){
- cat("View this CV online with links at https://github.com/AMCalejandro/cv/")
+ cat("View this CV online with links at _AMCalejandro.github.io/cv/_")
 } else {
  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/AMCalejandro/cv/raw/gh-pages/amc_cv.pdf)")
 }
@@ -109,7 +99,7 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Alejandro Martinez-Carrasco {#title}
+Alejandro M Carrasco{#title}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -121,9 +111,11 @@ CV %<>% print_text_block("intro")
 Work experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
-```{r}
-CV %<>% print_section('work_experience')
-```
+
+<!-- ```{r} -->
+<!-- CV %<>% print_section('work_experience') -->
+<!-- ``` -->
+
 
 
 Education {data-icon=graduation-cap data-concise=true}
@@ -138,6 +130,11 @@ CV %<>% print_section('education')
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
+
+```{r}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("teaching_describe") 
+```
 
 
 <!-- ::: aside -->
