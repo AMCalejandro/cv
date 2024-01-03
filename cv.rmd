@@ -55,7 +55,7 @@ Aside
 if(params$pdf_mode){
  cat("View this CV online with links at _AMCalejandro.github.io/cv/_")
 } else {
- cat("[<i class='fas fa-download'></i> Download a PDF of this #CV](https://github.com/AMCalejandro/cv/raw/gh-pages/dz_cv.pdf)")
+ cat("[<i class='fas fa-download'></i> Download a PDF of this #CV](https://github.com/AMCalejandro/cv/raw/gh-pages/amc_cv.pdf)")
 }
 ```
 
