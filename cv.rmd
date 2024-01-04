@@ -50,7 +50,6 @@ Aside
 #datadrivencv::build_network_logo(CV$entries_data)
 ```
 
-
 ```{r}
 
 if(params$pdf_mode){
@@ -58,7 +57,6 @@ if(params$pdf_mode){
 } else {
  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/AMCalejandro/cv/raw/gh-pages/amc_cv.pdf)")
 }
-
 ```
 
 Contact {#contact}
@@ -78,12 +76,14 @@ CV %>% print_skills("language")
 ```
 
 
+
 Technologies {#technologies}
 --------------------------------------------------------------------------------
 
 ```{r}
 CV %>% print_skills("technology")
 ```
+
 
 
 Disclaimer {#disclaimer}
@@ -94,6 +94,8 @@ Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
 The source code is available [GitHub](https://github.com/AMCalejandro/cv).  
 
 Last updated on `r Sys.Date()`.
+
+
 
 
 Main
@@ -108,13 +110,13 @@ CV %<>% print_text_block("intro")
 ```
 
 
+
 Work experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
-
-<!-- ```{r} -->
-<!-- CV %<>% print_section('work_experience') -->
-<!-- ``` -->
+```{r}
+CV %<>% print_section('work_experience')
+```
 
 
 
@@ -131,18 +133,16 @@ CV %<>% print_section('education')
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
-```{r}
-# Note the special double pipe so we modify the CV object in place
-CV %<>% print_text_block("teaching_describe") 
-```
-
+<!-- ```{r} -->
+<!-- # Note the special double pipe so we modify the CV object in place -->
+<!-- CV %<>% print_text_block("teaching_describe")  -->
+<!-- ``` -->
 
 <!-- ::: aside -->
 <!-- ```{r} -->
 <!-- CV %<>% print_text_block('teaching_experience_aside') -->
 <!-- ``` -->
 <!-- ::: -->
-
 
 ```{r}
 CV %<>% print_section('teaching_positions')
@@ -152,7 +152,6 @@ CV %<>% print_section('teaching_positions')
 
 Selected Publications {data-icon=book}
 --------------------------------------------------------------------------------
-
 
 ```{r}
 CV %<>% print_section('academic_articles')
@@ -164,4 +163,3 @@ CV %<>% print_section('academic_articles')
 ```{r}
 CV %<>% print_links()
 ```
-
