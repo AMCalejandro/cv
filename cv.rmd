@@ -160,6 +160,6 @@ CV %<>% print_section('academic_articles')
 
 
 
-<!-- ```{r} -->
-<!-- CV %<>% print_links() -->
-<!-- ``` -->
+```{r}
+CV %<>% print_links()
+```
